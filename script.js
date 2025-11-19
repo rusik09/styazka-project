@@ -1,5 +1,5 @@
 // ===== КОНФИГУРАЦИЯ =====
-const WORKER_URL = 'https://muddy-resonance-4c32.lakazov77.workers.dev'; // ЗАМЕНИТЕ на ваш реальный URL Worker!
+const WORKER_URL = 'https://polished-cake-e6c7.lakazov77.workers.dev/';
 
 console.log('✓ Script.js загружен!');
 console.log('Worker URL:', WORKER_URL);
