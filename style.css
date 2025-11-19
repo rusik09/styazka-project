@@ -535,7 +535,7 @@ img {
 /* Планшеты и ноутбуки */
 @media (max-width: 1200px) {
     .hero-content {
-        padding: 77px 100px 400px 100px;
+        padding: 100px 400px 100px 77px;
     }
     
     .footer .container {
@@ -549,7 +549,7 @@ img {
     }
     
     .hero-content {
-        padding: 60px 60px 300px 60px;
+        padding: 60px 300px 60px 60px;
     }
     
     .about-content {
@@ -607,11 +607,11 @@ img {
     }
 
     .hero-content {
-        padding: 40px 20px 80px 20px;
+        padding: 20px 80px 60px 40px;
     }
 
     .hero-title {
-        font-size: 36px;
+        font-size: 56px;
         margin-bottom: 30px;
     }
     
