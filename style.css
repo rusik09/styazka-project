@@ -81,6 +81,7 @@ img {
     height: 100vh;
     min-height: 600px;
     background: url('https://images.unsplash.com/photo-1541976590-713941681591?w=1920&h=1080&fit=crop') center/cover;
+    background-attachment: fixed;
     display: flex;
     align-items: flex-end;
     margin-top: 60px;
@@ -213,7 +214,9 @@ img {
 /* ===== PORTFOLIO SECTION ===== */
 .portfolio {
     padding: 100px 0;
-    background: #000;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('assets/images/ЮгСтройПрогресс-4.webp') center/cover no-repeat;
+    background-attachment: fixed;  /* Параллакс */
     color: #fff;
 }
 
@@ -353,7 +356,9 @@ img {
 .footer {
     min-height: 100vh;
     padding: 100px 0 40px;
-    background: #000;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('assets/images/ЮгСтройПрогресс-3.webp') center/cover no-repeat;
+    background-attachment: fixed;  /* Параллакс эффект */
     color: #fff;
     display: flex;
     align-items: center;
@@ -470,10 +475,10 @@ img {
 .form-input,
 .form-textarea {
     background: transparent;
-    border: 1px solid #555;
+    border: 1px solid #777;
     color: #fff;
     padding: 15px;
-    font-size: 14px;
+    font-size: 18px;
     font-family: inherit;
     transition: border-color 0.3s ease;
 }
@@ -526,7 +531,41 @@ img {
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* Планшеты и ноутбуки */
+@media (max-width: 1200px) {
+    .hero-content {
+        padding: 77px 100px 400px 100px;
+    }
+    
+    .footer .container {
+        padding: 0 60px;
+    }
+}
+
 @media (max-width: 1024px) {
+    .container {
+        padding: 0 40px;
+    }
+    
+    .hero-content {
+        padding: 60px 60px 300px 60px;
+    }
+    
+    .about-content {
+        gap: 60px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
     .footer .container {
         padding: 0 40px;
     }
@@ -536,9 +575,19 @@ img {
     }
 }
 
+/* Планшеты */
 @media (max-width: 768px) {
+    /* Header */
     .header {
         padding: 15px 0;
+    }
+
+    .logo {
+        font-size: 14px;
+    }
+    
+    .logo-icon {
+        font-size: 18px;
     }
 
     .logo-text {
@@ -550,9 +599,11 @@ img {
         font-size: 11px;
     }
 
+    /* Hero */
     .hero {
         margin-top: 50px;
         min-height: 500px;
+        background-attachment: scroll;
     }
 
     .hero-content {
@@ -561,8 +612,19 @@ img {
 
     .hero-title {
         font-size: 36px;
+        margin-bottom: 30px;
+    }
+    
+    .hero-button {
+        padding: 14px 32px;
+        font-size: 11px;
     }
 
+    /* About */
+    .about {
+        padding: 60px 0;
+    }
+    
     .about-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -572,30 +634,101 @@ img {
         height: 300px;
     }
 
+    /* Services */
+    .services {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    
+    .section-subtitle {
+        font-size: 13px;
+        margin-bottom: 40px;
+    }
+
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .service-image {
+        height: 220px;
+    }
+
+    /* Portfolio */
+    .portfolio {
+        padding: 60px 0;
+        background-attachment: scroll;
+    }
+    
+    .section-title-white {
+        font-size: 32px;
+        margin-bottom: 40px;
     }
 
     .portfolio-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .portfolio-image {
+        height: 300px;
     }
 
+    /* Stats */
+    .stats {
+        padding: 60px 0;
+    }
+    
     .stats-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+    
+    .stat-title,
+    .stat-number {
+        font-size: 28px;
+    }
 
+    /* Partners */
+    .partners {
+        padding: 50px 0;
+    }
+    
     .partners-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .partner-logo img {
+        max-width: 130px;
+        max-height: 50px;
     }
 
+    /* Testimonials */
+    .testimonials {
+        padding: 60px 0;
+    }
+    
     .testimonials-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .testimonial-card {
+        padding: 25px;
     }
 
+    /* Footer */
     .footer {
         min-height: auto;
         padding: 60px 0 40px;
+        background-attachment: scroll;
     }
     
     .footer .container {
@@ -605,7 +738,7 @@ img {
 
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 50px;
     }
     
     .footer-info,
@@ -614,32 +747,150 @@ img {
         max-width: 100%;
     }
     
+    .footer-logo {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    
+    .contact-title {
+        font-size: 18px;
+    }
+    
+    .form-title {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    
+    .form-submit {
+        font-size: 16px;
+    }
+    
     .footer-copyright {
         padding-top: 40px;
+        font-size: 13px;
     }
 }
 
+/* Мобильные телефоны */
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
+    }
+    
+    /* Hero */
+    .hero {
+        min-height: 450px;
     }
 
     .hero-content {
         padding: 30px 15px 60px 15px;
     }
+    
+    .hero-title {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    
+    .hero-button {
+        padding: 12px 28px;
+        font-size: 10px;
+    }
 
+    /* Sections */
     .about,
     .services,
     .portfolio,
     .testimonials {
-        padding: 60px 0;
+        padding: 50px 0;
+    }
+    
+    .section-title,
+    .section-title-white {
+        font-size: 26px;
+    }
+    
+    .section-subtitle {
+        font-size: 12px;
     }
 
     .stats {
         padding: 50px 0;
     }
     
+    .stat-title,
+    .stat-number {
+        font-size: 24px;
+    }
+    
+    .partners {
+        padding: 40px 0;
+    }
+    
+    .partners-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .partner-logo img {
+        max-width: 150px;
+        max-height: 55px;
+    }
+    
+    /* Footer */
     .footer .container {
         padding: 0 15px;
     }
+    
+    .footer-logo {
+        font-size: 16px;
+    }
+    
+    .contact-title {
+        font-size: 16px;
+    }
+    
+    .contact-item {
+        font-size: 13px;
+    }
+    
+    .social-title {
+        font-size: 13px;
+    }
+    
+    .form-title {
+        font-size: 24px;
+    }
+    
+    .form-input,
+    .form-textarea {
+        padding: 12px;
+        font-size: 13px;
+    }
+    
+    .form-submit {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+    
+    .footer-copyright {
+        font-size: 12px;
+    }
 }
+
+/* Очень маленькие экраны */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 24px;
+    }
+    
+    .section-title,
+    .section-title-white {
+        font-size: 22px;
+    }
+    
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 10px;
+    }
+}
+
