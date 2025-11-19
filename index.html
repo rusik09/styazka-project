@@ -189,7 +189,16 @@
                     <h3 class="form-title">Оставьте заявку</h3>
                     <form id="contact-form" class="contact-form">
                         <input type="text" name="name" placeholder="Имя" required class="form-input">
-                        <input type="tel" name="phone" placeholder="Телефон" required class="form-input">
+                        <input 
+                            type="tel" 
+                            name="phone" 
+                            placeholder="Телефон" 
+                            required 
+                            class="form-input"
+                            inputmode="numeric"
+                            pattern="[0-9\s\(\)\-\+]*"
+                            maxlength="18"
+                        >
                         <textarea name="message" placeholder="Ваш комментарий" rows="4" class="form-textarea"></textarea>
                         <button type="submit" class="form-submit">Отправить</button>
                     </form>
